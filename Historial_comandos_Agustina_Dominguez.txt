@@ -1,0 +1,36 @@
+ssh-keygen -t ed25519
+cat $HOME/.ssh/*.pub
+cd
+mkdir repogit
+cd repogit
+git clone git@github.com:AgusDom05/TP1_AySO.git
+cd TP1_AySO/
+pwd
+ls -l
+cat /etc/os-release
+man grep
+grep home_url /etc/os-release
+grep HOME_URL /etc/os-release
+grep -i Home_url /etc/os-release
+whoami
+echo “Usuario=$(whoami)” > datos_usuario.txt
+git add .
+git config --global user.email "agustinadominguez0805@gmail.com"
+git config --global user.name "AgusDom05"
+git commit -m "ADD: agregado 1er ejercicio sobre datos_usuarios.txt"
+git status
+git push
+grep "model name" /proc/cpuinfo | head -n1 >> datos_usuario.txt
+git add datos_usuario.txt
+git commit -m "feat: Añadiendo información de CPU"
+git status
+git push
+cat <<EOF >> README.md
+Alumno: Agustina_Dominguez
+División: 313
+Turno: Noche
+EOF
+git add README.md
+git commit -m "ADD: Añadiendo Readme y datos de usuario"
+git push
+history -a
